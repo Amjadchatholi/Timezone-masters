@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-r$_mhe7@!7p=(gdv@j^kx)+00%u7tfdfede9=8wol&%@j^t0!r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) # True
 
-ALLOWED_HOSTS = ['web-production-aa25.up.railway.app', '127.0.0:1']
+ALLOWED_HOSTS = ['web-production-aa25.up.railway.app', '127.0.0.1:']
 
 
 # Application definition
@@ -96,11 +96,11 @@ AUTH_USER_MODEL = 'accounts.Account'
 DATABASES = {
     'default': {    
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'timelamb',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'amjad12345',
-        'HOST': 'localhost',
-        'PORT': '5612',
+        'PASSWORD': 'WZoe6OYzeZeCXVc6k49I',
+        'HOST': 'containers-us-west-120.railway.app',
+        'PORT': '5914',
         
     }
 }
