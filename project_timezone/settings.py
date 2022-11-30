@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-r$_mhe7@!7p=(gdv@j^kx)+00%u7tfdfede9=8wol&%@j^t0!r
 DEBUG = True
 
 ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
-# ALLOWED_HOSTS = []
+
 
 # Application definition
 
@@ -160,12 +160,7 @@ MESSAGE_TAGS = {
 }
 
 
-# # SMTP configuration
-# EMAIL_HOST = config('EMAIL_HOST')
-# EMAIL_PORT = config('EMAIL_PORT', cast=int)
-# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-# EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+
 
 # SMTP configuration
 EMAIL_HOST = 'smtp.gmail.com'
