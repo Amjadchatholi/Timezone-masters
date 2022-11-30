@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-from decouple import config
-import django_heroku
-import dj_database_url
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,8 +29,8 @@ SECRET_KEY = 'django-insecure-r$_mhe7@!7p=(gdv@j^kx)+00%u7tfdfede9=8wol&%@j^t0!r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
+# ALLOWED_HOSTS = []
 
 # Application definition
 
