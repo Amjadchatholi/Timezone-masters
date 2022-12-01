@@ -177,4 +177,4 @@ EMAIL_USE_TLS = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['timezone.up.railway.app', '127.0.0:1']
+CSRF_TRUSTED_ORIGINS = ['https://timezone.up.railway.app/']
