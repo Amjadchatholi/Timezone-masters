@@ -30,6 +30,7 @@ SECRET_KEY = 'django-insecure-r$_mhe7@!7p=(gdv@j^kx)+00%u7tfdfede9=8wol&%@j^t0!r
 DEBUG = True
 
 ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
+
 # ALLOWED_HOSTS = ['*']
 
 
@@ -176,3 +177,4 @@ EMAIL_USE_TLS = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CSRF_TRUSTED_ORIGINS = ['timezone.up.railway.app', '127.0.0:1']
