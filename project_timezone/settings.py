@@ -30,9 +30,9 @@ SECRET_KEY = 'django-insecure-r$_mhe7@!7p=(gdv@j^kx)+00%u7tfdfede9=8wol&%@j^t0!r
 DEBUG = True
 
 # ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
-ALLOWED_HOSTS = ["timezone.up.railway.app","chrome-extension://theIDofYourExtension"]
+# # ALLOWED_HOSTS = ["timezone.up.railway.app","chrome-extension://theIDofYourExtension"]
 
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

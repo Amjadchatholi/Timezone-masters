@@ -1065,7 +1065,7 @@ ol {
 
 .categories__text h1 {
 	font-family: "Cookie", cursive;
-	color: #111111;
+	color:greenyellow;
 	margin-bottom: 5px;
 }
 
@@ -1080,7 +1080,7 @@ ol {
 
 .categories__text a {
 	font-size: 14px;
-	color: #111111;
+	color: gold;
 	text-transform: uppercase;
 	font-weight: 600;
 	position: relative;
