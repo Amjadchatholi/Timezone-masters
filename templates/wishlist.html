@@ -23,7 +23,8 @@
                                     {% for wishlist in wishlist_item %}
                                     <tr>
                                         <td class="product-thumbnail"><a href="{{wishlist.product.get_url}}"><img
-                                                    src="{{wishlist.product.images.url}}" style="height: 200px;"></a></td>
+                                                    src="{{wishlist.product.images.url}}" style="height: 200px;"></a>
+                                        </td>
                                         <td class="product-name"><a
                                                 href="{{wishlist.product.get_url}}">{{wishlist.product.product_name|truncatechars:20}}</a>
                                         </td>
@@ -31,7 +32,8 @@
                                                 class="amount">${{wishlist.product.price}}</span></td>
                                         <td class="product-quantity">
                                             <button class="tp-btn-h1" type="submit"><a
-                                                    href="{% url 'add_cart' wishlist.product.id %}">Add To Cart</a></button>
+                                                    href="{% url 'add_cart' wishlist.product.id %}">Add To
+                                                    Cart</a></button>
                                         </td>
                                         <td class="product-remove"><a
                                                 href="{% url 'remove_wishlist' wishlist.product.id %}"><i

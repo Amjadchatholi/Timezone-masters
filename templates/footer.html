@@ -66,14 +66,14 @@
                         <a href="./index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    cilisis.</p>
+                        cilisis.</p>
                     <div class="footer__payment">
-                        <a href="#"><img src="{% static 'img/payment/payment-1.png' %}"alt=""></a>
+                        <a href="#"><img src="{% static 'img/payment/payment-1.png' %}" alt=""></a>
                         <a href="#"><img src="{% static 'img/payment/payment-2.png' %}" alt=""></a>
                         <a href="#"><img src="{% static 'img/payment/payment-3.png' %}" alt=""></a>
                         <a href="#"><img src="{% static 'img/payment/payment-4.png' %}" alt=""></a>
                         <a href="#"><img src="{% static 'img/payment/payment-5.png' %}" alt=""></a>
-                        
+
                     </div>
                 </div>
             </div>
@@ -120,7 +120,10 @@
             <div class="col-lg-12">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 <div class="footer__copyright__text">
-                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                    <p>Copyright &copy; <script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | This template is made with <i class="fa fa-heart"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
                 </div>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
@@ -135,28 +138,28 @@
         <div class="search-close-switch">+</div>
         <form action="{% url 'search' %}" class="search" method='GET'>
             <div class="input-group w-100">
-              <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="keyword">
-    
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
+                <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="keyword">
+
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
             </div>
-        </form> 
+        </form>
     </div>
 </div>
 
-    {% comment %} <div class="input-group w-100">
-      <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="keyword">
+{% comment %} <div class="input-group w-100">
+    <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="keyword">
 
-      <div class="input-group-append">
+    <div class="input-group-append">
         <button class="btn btn-primary" type="submit">
-          <i class="fa fa-search"></i>
+            <i class="fa fa-search"></i>
         </button>
-      </div>
     </div>
-</form>  {% endcomment %}
+</div>
+</form> {% endcomment %}
 <!-- Search End -->
 
 <!-- Js Plugins -->

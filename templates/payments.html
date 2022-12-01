@@ -8,7 +8,7 @@
 
 		<!-- ============================ COMPONENT 1 ================================= -->
 		<h4 class="text-center mb-20">Review Your Order and Make Payment</h4>
-        <br>
+		<br>
 		<div class="row">
 
 			<aside class="col-lg-8">
@@ -28,7 +28,7 @@
 
 					</div>
 				</div>
-                <br>
+				<br>
 				<div class="card">
 					<h5 class="card-header">Payment Method</h5>
 					<div class="card-body">
@@ -36,7 +36,7 @@
 
 					</div>
 				</div>
-                <br>
+				<br>
 				<div class="card">
 					<h5 class="card-header">Review Products</h5>
 					<div class="card-body">
@@ -55,13 +55,16 @@
 								<tr>
 									<td>
 										<figure class="itemside align-items-center">
-											<div class="aside"><img src="{{ cart_item.product.images.url }}"style="height: 200px;"/ class="img-sm"></div>
+											<div class="aside"><img src="{{ cart_item.product.images.url }}"
+													style="height: 200px;"/ class="img-sm"></div>
 											<figcaption class="info">
-												<a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
+												<a href="{{ cart_item.product.get_url }}"
+													class="title text-dark">{{ cart_item.product.product_name }}</a>
 												<p class="text-muted small">
 													{% if cart_item.variations.all %}
 													{% for item in cart_item.variations.all %}
-													{{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
+													{{ item.variation_category | capfirst }} :
+													{{ item.variation_value | capfirst }} <br>
 													{% endfor %}
 													{% endif %}
 												</p>
@@ -99,7 +102,7 @@
 								<li>Total price: <span>${{total}}</span></li>
 								<li>Tax: <span>${{tax}}</span></li>
 								<li>Grand Total:<span>$ {{tax}}</span></li>
-								
+
 							</ul>
 						</div>
 						<hr>
@@ -127,22 +130,21 @@
 <!-- ========================= SECTION CONTENT END// ========================= -->
 
 <script>
-
 	function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
+		let cookieValue = null;
+		if (document.cookie && document.cookie !== '') {
+			const cookies = document.cookie.split(';');
+			for (let i = 0; i < cookies.length; i++) {
+				const cookie = cookies[i].trim();
+				// Does this cookie string begin with the name we want?
+				if (cookie.substring(0, name.length + 1) === (name + '=')) {
+					cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+					break;
+				}
+			}
+		}
+		return cookieValue;
+	}
 
 	var amount = "{{ grand_total }}"
 	var url = "{% url 'payments' %}"
@@ -161,7 +163,7 @@
 		},
 
 		// Set up the transaction
-		createOrder: function(data, actions) {
+		createOrder: function (data, actions) {
 			return actions.order.create({
 				purchase_units: [{
 					amount: {
@@ -172,29 +174,31 @@
 		},
 
 		// Finalize the transaction
-		onApprove: function(data, actions) {
-			return actions.order.capture().then(function(details) {
+		onApprove: function (data, actions) {
+			return actions.order.capture().then(function (details) {
 				// Show a success message to the buyer
 				console.log(details);
 				sendData();
-				function sendData(){
+
+				function sendData() {
 					fetch(url, {
-						method : "POST",
-						headers: {
-							"Content-type": "application/json",
-							"X-CSRFToken": csrftoken,
-						},
-						body: JSON.stringify({
-							orderID: orderID,
-							transID: details.id,
-							payment_method: payment_method,
-							status: details.status,
-						}),
-					})
-				  .then((response) => response.json())
-				  .then((data) => {
-						window.location.href = redirect_url + '?order_number='+data.order_number+'&payment_id='+data.transID;
-					});
+							method: "POST",
+							headers: {
+								"Content-type": "application/json",
+								"X-CSRFToken": csrftoken,
+							},
+							body: JSON.stringify({
+								orderID: orderID,
+								transID: details.id,
+								payment_method: payment_method,
+								status: details.status,
+							}),
+						})
+						.then((response) => response.json())
+						.then((data) => {
+							window.location.href = redirect_url + '?order_number=' + data
+								.order_number + '&payment_id=' + data.transID;
+						});
 				}
 			});
 		}
@@ -204,4 +208,4 @@
 </script>
 
 
-{% endblock %}  
+{% endblock %}
