@@ -23,16 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = config('SECRET_KEY')
+
 SECRET_KEY = 'django-insecure-r$_mhe7@!7p=(gdv@j^kx)+00%u7tfdfede9=8wol&%@j^t0!r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
-# # ALLOWED_HOSTS = ["timezone.up.railway.app","chrome-extension://theIDofYourExtension"]
+# ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
 
-# ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -181,9 +181,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
-     "https://timezone.up.railway.app/",
+    "https://timezone.up.railway.app",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000",
-    "https://timezone.up.railway.app/",
+    "https://timezone.up.railway.app",
     ]
