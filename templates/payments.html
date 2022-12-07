@@ -77,8 +77,8 @@
 									</td>
 									<td>
 										<div class="price-wrap">
-											<var class="price">$ {{ cart_item.sub_total }}</var>
-											<small class="text-muted"> $ {{ cart_item.product.price }} each </small>
+											<var class="price">₹ {{ cart_item.sub_total }}</var>
+											<small class="text-muted"> ₹ {{ cart_item.product.price }} each </small>
 										</div> <!-- price-wrap .// -->
 									</td>
 
@@ -99,9 +99,9 @@
 						<h5>Your order</h5>
 						<div class="checkout__order__total">
 							<ul>
-								<li>Total price: <span>${{total}}</span></li>
-								<li>Tax: <span>${{tax}}</span></li>
-								<li>Grand Total:<span>$ {{tax}}</span></li>
+								<li>Total price: <span>₹{{total}}</span></li>
+								<li>Tax: <span>₹{{tax}}</span></li>
+								<li>Grand Total:<span>₹ {{tax}}</span></li>
 
 							</ul>
 						</div>
