@@ -17,7 +17,9 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from django.db.models import Sum,Count
 from django.db.models.functions import TruncMonth,TruncMinute,TruncDay
+from store.models import Variation
 import datetime
+from store.forms import VariationForm
 
 
 
@@ -36,7 +38,7 @@ def admin_login(request):
                 auth.login(request, user)
                 return redirect(admin_home)
             else:
-                messages.error(request, 'You are not an admin !')  
+                messages.error(request, 'you not admin')  
                 return redirect('admin_login')  
             # messages.error(request, 'Invalid email or password !')    
     form = admin_login_form()    
@@ -118,7 +120,7 @@ def block_user(request,pk):
         user = Account.objects.get(id=pk)
         user.is_active = False
         user.save()
-        return redirect('block_user')    
+        return redirect('admin_user')    
 
 #unblock user
 @login_required(login_url= 'admin_login')
@@ -242,12 +244,12 @@ def addproduct(request):
     }
     return render(request, 'adminpannel/addproduct.html',context)
 
-def view_vendor_pending_product(request,):
-    product = Product.objects.all().filter()
-    context = {
-    'product':product,
-    }    
-    return render(request,'adminpannel/pendingProduct.html', context)
+# def view_vendor_pending_product(request,):
+#     product = Product.objects.all().filter()
+#     context = {
+#     'product':product,
+#     }    
+#     return render(request,'adminpannel/pendingProduct.html', context)
 
 
 #vendor product accept
@@ -426,4 +428,71 @@ def order_completed(request,id):
         order_status.save()
         return redirect('accepted_order_admin')   
 
+
+
+@login_required(login_url= 'admin_login')
+def varitoin_product(request):
+    variation = Variation.objects.all()
+    context = {
+        'variation':variation
+    }
+    return render(request,'adminpannel/variation.html',context)
+
+
+
+@login_required(login_url="login")     
+def add_variations(request):
+    if request.user.is_superadmin:
+        form = VariationForm()
+        if request.method == 'POST':
+            form = VariationForm(request.POST)
+            print(form)
+            if form.is_valid():
+                if Variation.objects.filter(variation_value__startswith=Variation.variation_value).exists():
+                    messages.info(request,"Variation already exists")
+                    return redirect('add_variations')
+                form.save()
+                messages.info(request,"Your variation added successfully")
+                return redirect('add_variations')
+            else:   
+                messages.info(request,  'Variation is already exist')
+                return redirect('add_variations')
+        else:
+            form = VariationForm()
+        context = {
+            'form' : form,
+        }
+        return render(request,'adminpannel/add_variations.html',context)
+    else:
+        return redirect('varitionproduct')
+
+
+@login_required(login_url="login")
+def edit_variations(request,id):
+    if request.user.is_superadmin:
+        variation = Variation.objects.get(id=id)
+        if request.method =='POST':
+            form = VariationForm(request.POST,instance=variation)
+            if form.is_valid():
+                form.save()
+                return redirect('store_table',id=2)
+        else:
+            form = VariationForm(instance=variation)
+        context = {
+            'form' : form,
+        }
+        # return render (request,'adminpanel/store_table/add_variations.html',context)
+        return render(request,'adminpannel/add_variations.html',context)
+    else:
+        return redirect ('home')
+
+
+@login_required(login_url="login")
+def delete_variatons(request,id):
+    if request.user.is_superadmin:
+        variation = Variation.objects.get(id=id)
+        variation.delete()
+        return redirect('varitionproduct')
+    else:
+        return redirect ('home')
 

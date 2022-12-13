@@ -13,7 +13,7 @@
   <meta name="description" content="" />
 
   <!-- Favicon -->
- 
+  <link rel="icon" type="image/x-icon" href="{%static 'assets/img/favicon/favicon.ico' %}" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -164,19 +164,24 @@
                   <div data-i18n="Account">View product</div>
                 </a>
               </li>
-              {% comment %} <li class="menu-item">
+              <li class="menu-item">
                 <a href="{% url 'add_product' %}" class="menu-link">
                   <div data-i18n="Notifications">Add product</div>
                 </a>
-              </li> {% endcomment %}
-              <li class="menu-item">
+              </li> 
+              {% comment %} <li class="menu-item">
                 <a href="{% url 'view_vendor_pending_product' %}" class="menu-link">
                   <div data-i18n="Notifications">Product request</div>
                 </a>
-              </li>
+              </li> {% endcomment %}
               <li class="menu-item">
                 <a href="{% url 'view_unlisted_product_admin' %}" class="menu-link">
                   <div data-i18n="Notifications">Unlisted product</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="{% url 'varitionproduct' %}" class="menu-link">
+                  <div data-i18n="Notifications">variation product</div>
                 </a>
               </li>
             </ul>

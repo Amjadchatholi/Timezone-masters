@@ -18,7 +18,7 @@ urlpatterns = [
 
     path('pending_product_manage/<int:id>', views.admin_vendor_addproduct_accept, name='pending_product_manage'),
 
-    path('view_vendor_pending_product/',views.view_vendor_pending_product,name='view_vendor_pending_product'),
+    # path('view_vendor_pending_product/',views.view_vendor_pending_product,name='view_vendor_pending_product'),
 
     path('view_unlisted_product_admin/',views.view_unlisted_product_admin, name='view_unlisted_product_admin'),
     path('unlist_product_manage_admin/<int:id>',views.unlist_product_manage_admin, name='unlist_product_manage_admin'),
@@ -38,4 +38,10 @@ urlpatterns = [
 
     path('order_confirm/<int:id>', views.order_confirm, name ='order_confirm_admin'),
     path('order_completed/<int:id>', views.order_completed, name ='order_completed_admin'),
+
+    path('varition_product/',views.varitoin_product, name='varitionproduct'),
+    path('add_variations/',views.add_variations, name='add_variations'),
+    path('edit_variations/<int:id>/',views.edit_variations,name='edit_variations'),
+    path('delete_variatons/<int:id>/',views.delete_variatons,name='delete_variatons'),
+    
 ]

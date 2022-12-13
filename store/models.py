@@ -3,6 +3,7 @@ from category.models import Category
 from django.urls import reverse
 from accounts.models import Account
 from django.db.models import Avg, Count
+from django import forms
 
 # Create your models here.
 
@@ -88,3 +89,11 @@ class ProductGallery(models.Model):
     class Meta:
         verbose_name = 'productgallery'
         verbose_name_plural = 'product gallery'
+
+
+class VariationForm(forms.ModelForm):
+    class Meta:
+        model : Variation
+        fields = ['product','variation_category','variation_value','is_active']
+
+        
