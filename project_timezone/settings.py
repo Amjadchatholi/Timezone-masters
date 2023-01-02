@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'carts',
     'orders',
     'wishlists',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -97,11 +98,11 @@ AUTH_USER_MODEL = 'accounts.Account'
 DATABASES = {
     'default': {    
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'WZoe6OYzeZeCXVc6k49I',
-        'HOST': 'containers-us-west-120.railway.app',
-        'PORT': '5914',
+        'PASSWORD': 'amjad8086',
+        'HOST': 'timezone.clohfk3pcvfa.ap-northeast-1.rds.amazonaws.com',
+        'PORT': '5432',
         
     }
 }
@@ -184,11 +185,26 @@ EMAIL_PORT = 587
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8000",
-    "https://timezone.up.railway.app",
-]
-CSRF_TRUSTED_ORIGINS = [
-    "http://127.0.0.1:8000",
-    "https://timezone.up.railway.app",
-    ]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://127.0.0.1:8000",
+#     "https://timezone.up.railway.app",
+# ]
+# CSRF_TRUSTED_ORIGINS = [
+#     "http://127.0.0.1:8000",
+#     "https://timezone.up.railway.app",
+#     ]
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+AWS_ACCESS_KEY_ID = 'AKIA3TIJL7MOSA7C4LLR'
+
+
+AWS_SECRET_ACCESS_KEY = 'Weekoiz6DTpFRS803Ncu9BiCWqg8WAGn53cpM8PO'
+
+AWS_QUERYSTRING_AUTH = False
+
+AWS_STORAGE_BUCKET_NAME = 'timezone-buket'
+
+AWS_S3_FILE_OVERWRITE = False
