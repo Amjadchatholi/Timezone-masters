@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-
+# from decouple import config
+# from storages.backends.s3boto3 import S3Boto3Storage
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
+# SECRET_KEY = config('SECRET_KEY')
 SECRET_KEY = 'django-insecure-r$_mhe7@!7p=(gdv@j^kx)+00%u7tfdfede9=8wol&%@j^t0!r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = config('DEBUG', cast=bool) #using bool function convert DEBUG to boolean
 DEBUG = True
 
 # ALLOWED_HOSTS = ['timezone.up.railway.app', '127.0.0:1']
@@ -99,13 +102,24 @@ DATABASES = {
     'default': {    
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
-        'USER': 'postgres',
+        'USER': 'timezone',
         'PASSWORD': 'amjad8086',
-        'HOST': 'timezone.clohfk3pcvfa.ap-northeast-1.rds.amazonaws.com',
+        'HOST': 'database-2.cspkw0mdzjni.ap-northeast-1.rds.amazonaws.com',
         'PORT': '5432',
         
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config('ENGINE'),
+#         'NAME': config('NAME'),
+#         'USER': config('USER'),
+#         'PASSWORD': config('PASSWORD'),
+#         'HOST': config('HOST'),
+#         'PORT': config('DATABASE_PORT', cast=int),
+#     }
+# }
 
   
 
@@ -179,6 +193,14 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'amnasanu100@gmail.com'
 EMAIL_HOST_PASSWORD = 'utquoihfalxixyun'
 EMAIL_PORT = 587
+
+# EMAIL_BACKEND = config('EMAIL_BACKEND')                                     
+# EMAIL_HOST = config('EMAIL_HOST', default='localhost') 
+# EMAIL_PORT =  config('EMAIL_PORT', cast=int)     
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')     
+# EMAIL_HOST_PASSWORD =  config('EMAIL_HOST_PASSWORD')       
+# EMAIL_USE_TLS =   config('EMAIL_USE_TLS', cast=bool)  
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -198,13 +220,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-AWS_ACCESS_KEY_ID = 'AKIA3TIJL7MOSA7C4LLR'
+AWS_ACCESS_KEY_ID = 'AKIAUHMTEUDUQJXOUR53'
 
 
-AWS_SECRET_ACCESS_KEY = 'Weekoiz6DTpFRS803Ncu9BiCWqg8WAGn53cpM8PO'
+AWS_SECRET_ACCESS_KEY = 'JzmO9yzzG6M+BlidLfGvvax4ur30g4Jn4QSgsrTA'
 
 AWS_QUERYSTRING_AUTH = False
 
-AWS_STORAGE_BUCKET_NAME = 'timezone-buket'
+AWS_STORAGE_BUCKET_NAME = 'timezone2-buket'
 
-AWS_S3_FILE_OVERWRITE = False
+AWS_S3_FILE_OVERWRITE = True
+
+AWS_DEFAULT_ACL = None
