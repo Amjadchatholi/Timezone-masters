@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'orders',
     'wishlists',
     'storages',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -109,6 +111,17 @@ DATABASES = {
         
     }
 }
+
+# DATABASES = {
+#     'default': {    
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'test2',
+#         'USER': 'postgres',
+#         'PASSWORD': 'amjad12345',
+        
+        
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -220,15 +233,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-AWS_ACCESS_KEY_ID = 'AKIAUHMTEUDUQJXOUR53'
+AWS_ACCESS_KEY_ID = 'AKIAUHMTEUDU4IUGD6MA'
 
 
-AWS_SECRET_ACCESS_KEY = 'JzmO9yzzG6M+BlidLfGvvax4ur30g4Jn4QSgsrTA'
+AWS_SECRET_ACCESS_KEY = '4/hNH/J5NMqQ5eect26H7O8ojI91+Q3vfqNz/Gqo'
 
 AWS_QUERYSTRING_AUTH = False
 
-AWS_STORAGE_BUCKET_NAME = 'timezone2-buket'
+AWS_STORAGE_BUCKET_NAME = 'newtimezone-bucket'
 
 AWS_S3_FILE_OVERWRITE = True
 
-AWS_DEFAULT_ACL = None
