@@ -100,17 +100,17 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {    
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'timezone',
-        'PASSWORD': 'amjad8086',
-        'HOST': 'database-2.cspkw0mdzjni.ap-northeast-1.rds.amazonaws.com',
-        'PORT': '5432',
+# DATABASES = {
+#     'default': {    
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'timezone',
+#         'PASSWORD': 'amjad8086',
+#         'HOST': 'database-2.cspkw0mdzjni.ap-northeast-1.rds.amazonaws.com',
+#         'PORT': '5432',
         
-    }
-}
+#     }
+# }
 
 # DATABASES = {
 #     'default': {    
@@ -172,12 +172,13 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[BASE_DIR/ 'static']
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS ='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_DIRS=[BASE_DIR/ 'static']
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 
