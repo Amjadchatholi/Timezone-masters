@@ -100,28 +100,28 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {    
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'timezone',
-        'PASSWORD': 'amjad8086',
-        'HOST': 'database-2.cspkw0mdzjni.ap-northeast-1.rds.amazonaws.com',
-        'PORT': '5432',
-        
-    }
-}
-
 # DATABASES = {
 #     'default': {    
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'test2',
-#         'USER': 'postgres',
-#         'PASSWORD': 'amjad12345',
-        
+#         'NAME': 'postgres',
+#         'USER': 'timezone',
+#         'PASSWORD': 'amjad8086',
+#         # 'HOST': 'database-2.cspkw0mdzjni.ap-northeast-1.rds.amazonaws.com',
+#         # 'PORT': '5432',
         
 #     }
 # }
+
+DATABASES = {
+    'default': {    
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test2',
+        'USER': 'postgres',
+        'PASSWORD': 'amjad12345',
+        
+        
+    }
+}
 
 # DATABASES = {
 #     'default': {
