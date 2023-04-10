@@ -100,28 +100,29 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Render postersql database
+
+import dj_database_url
+
+
+
+DATABASES = {
+
+    'default': dj_database_url.parse('postgres://timezonedatabase_user:66McmXyw6nBlF0QIqFvxF6KwQaLKpPp6@dpg-cgokg0orddl9mmrtu5e0-a.ohio-postgres.render.com/timezonedatabase')
+            
+}
+
 # DATABASES = {
 #     'default': {    
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'timezone',
-#         'PASSWORD': 'amjad8086',
-#         # 'HOST': 'database-2.cspkw0mdzjni.ap-northeast-1.rds.amazonaws.com',
-#         # 'PORT': '5432',
+#         'NAME': 'test2',
+#         'USER': 'postgres',
+#         'PASSWORD': 'amjad12345',
+        
         
 #     }
 # }
 
-DATABASES = {
-    'default': {    
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test2',
-        'USER': 'postgres',
-        'PASSWORD': 'amjad12345',
-        
-        
-    }
-}
 
 # DATABASES = {
 #     'default': {
