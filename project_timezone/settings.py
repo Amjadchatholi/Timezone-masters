@@ -232,17 +232,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     ]
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-AWS_ACCESS_KEY_ID = 'AKIAUHMTEUDU4IUGD6MA'
+# AWS_ACCESS_KEY_ID = 'AKIAUHMTEUDU4IUGD6MA'
 
 
-AWS_SECRET_ACCESS_KEY = '4/hNH/J5NMqQ5eect26H7O8ojI91+Q3vfqNz/Gqo'
+# AWS_SECRET_ACCESS_KEY = '4/hNH/J5NMqQ5eect26H7O8ojI91+Q3vfqNz/Gqo'
 
-AWS_QUERYSTRING_AUTH = False
+# AWS_QUERYSTRING_AUTH = False
 
-AWS_STORAGE_BUCKET_NAME = 'newtimezone-bucket'
+# AWS_STORAGE_BUCKET_NAME = 'newtimezone-bucket'
 
-AWS_S3_FILE_OVERWRITE = True
+# AWS_S3_FILE_OVERWRITE = True
 
